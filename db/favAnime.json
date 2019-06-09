@@ -1,12 +1,14 @@
 [
   {
-    "name": "NARUTOO",
+    "title": "NARUTOO",
     "image_url": "this is the image url",
-    "rate": 5
+    "synopsis": "The seemingly ordinary and unimpressive Saitama has a rather unique hobby: being a hero. In order to pursue his childhood dream, he trained relentlessly for three years—and lost all of his hair in the...",
+    "score": 5
   },
   {
     "name": "Black Clover",
     "image_url": "this is the image url",
-    "rate": 5
+    "synopsis": "The seemingly ordinary and unimpressive Saitama has a rather unique hobby: being a hero. In order to pursue his childhood dream, he trained relentlessly for three years—and lost all of his hair in the...",
+    "score": 6.0
   }
 ]

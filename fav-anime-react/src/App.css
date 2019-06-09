@@ -1,0 +1,44 @@
+.App {
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.kemicofa-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  justify-content: stretch;
+}
+
+.kemicofa-row .car-title {
+  color: red;
+  font-weight: 700;
+}
+
+.kemicofa-row > * {
+  flex-basis: 20rem;
+  flex-shrink: 0;
+}
+
+.kemicofa-row .card {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.kemicofa-row .card > .card-content {
+  flex-grow: 1;
+  flex-basis: 23rem;
+}
+
+.kemicofa-row .card > .card-image {
+  flex-basis: 25rem;
+  flex-shrink: 20;
+  overflow-y: hidden;
+  background-color: rgba(194, 189, 189, 0.644);
+}

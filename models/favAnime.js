@@ -2,9 +2,10 @@ const mongoose = require("../db/connections");
 const Schema = mongoose.Schema;
 
 const FavAnimeModel = new Schema({
-  name: String,
+  title: String,
   image_url: String,
-  rate: Number
+  score: Number,
+  synopsis: String
 });
 
 module.exports = mongoose.model("FavAnimeModel", FavAnimeModel);
