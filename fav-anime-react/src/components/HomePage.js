@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Route, Link, Switch } from "react-router-dom";
+import { Redirect } from "react-router";
+import AnimeDetail from "./AnimeDetail";
 
 class Home extends Component {
   constructor(props) {
@@ -20,7 +22,7 @@ class Home extends Component {
                   <img src={anime.image_url} alt={anime.title} />
                 </div>
                 <div className="card-content">
-                  <Link to="/animeInfo">
+                  <Link to="/animeDetail">
                     <span className="card-title">{anime.title}</span>
                   </Link>
                   <p>{anime.synopsis}</p>

@@ -27,7 +27,8 @@ class App extends Component {
     super(props);
     this.state = {
       allAnime: [],
-      favAnime: []
+      favAnime: [],
+      animeId: null
     };
   }
 
@@ -51,11 +52,39 @@ class App extends Component {
       })
       .catch(err => console.warn(err.message));
   }
+  handleAnimeDetail = id => {
+    fetch(`${base_url}/anime/${id}`)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+      })
+      // .then(updateDom)
+      .catch(err => console.warn(err.message));
+  };
 
   render() {
     console.log(this.state.allAnime);
     return (
       <div>
+        <nav>
+          <div className="nav-wrapper">
+            <Link className="brand-logo">Anime Galaxy</Link>
+            <ul id="nav-mobile" className="right hide-on-med-and-down">
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/favAnime">FavAnime</Link>
+              </li>
+              <li>
+                <Link to="/unknown" href="collapsible.html">
+                  Others
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
         <Switch>
           <Route
             exact
@@ -68,11 +97,12 @@ class App extends Component {
             )}
           />
           <Route
-            path="/animeInfo"
+            path="/animeDetail"
             render={props => (
               <AnimeDetail
                 allAnime={this.state.allAnime}
                 allFavAnime={this.state.favAnime}
+                handleAnimeDetail={this.handleAnimeDetail}
               />
             )}
           />
