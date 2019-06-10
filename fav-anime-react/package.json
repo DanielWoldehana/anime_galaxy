@@ -3,7 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.1.0",
+    "@material-ui/icons": "^4.1.0",
+    "animepill-api": "^1.0.91",
     "axios": "^0.19.0",
+    "contentful": "^7.6.0",
     "jikanjs": "^0.7.0",
     "materialize-css": "^1.0.0-rc.2",
     "react": "^16.8.6",

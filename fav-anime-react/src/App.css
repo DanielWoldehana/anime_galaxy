@@ -1,18 +1,19 @@
-.App {
-  text-align: center;
+.app {
+  margin: 0;
 }
 
 body {
   margin: 0;
   overflow-x: hidden;
+  background-color: rgb(130, 99, 148);
 }
 
 .animeGalaxy {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   overflow-x: scroll;
-  justify-content: stretch;
+  justify-content: center;
 }
 
 .animeGalaxy .car-title {
@@ -29,6 +30,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 300px;
+  background-color: rgb(250, 249, 249);
 }
 
 .animeGalaxy .card > .card-content {
@@ -37,17 +39,51 @@ body {
   overflow: scroll;
 }
 
+.animeGalaxy .card-content {
+  /* position: absolute; */
+}
+
 .animeGalaxy .card > .card-image {
   flex-basis: 25rem;
   flex-shrink: 2;
   overflow-y: hidden;
-  background-color: rgba(194, 189, 189, 0.644);
 }
 
 .animeGalaxy .card > .card-image {
   flex-basis: 15rem;
 }
 
-.icon {
-  height: 15px;
+.card-reveal {
+  background-color: rgba(182, 73, 73, 0.644);
+}
+
+/* @media only screen and(max-width: 600px) {
+  .animeGalaxy .card > .card-content {
+    flex-basis: 2rem;
+  }
+} */
+
+.cardLinks {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow-x: scroll;
+  justify-content: space-evenly;
+}
+
+.cardLinks a {
+  color: rgba(10, 10, 10, 0.37);
+  font-size: 20px;
+}
+
+.cardLinks a:hover {
+  color: rgb(43, 145, 228);
+  border-bottom: 2px solid orange;
+}
+
+.iconLink {
+  color: black;
+}
+
+.homeIcon {
 }

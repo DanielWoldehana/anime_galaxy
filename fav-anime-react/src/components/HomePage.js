@@ -7,7 +7,6 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      allAnime: [],
       clickedAnime: []
     };
   }
@@ -36,11 +35,12 @@ class Home extends Component {
                 </Link>
                 <i className="material-icons right">more_vert</i>
               </span>
-              <p>
+              <p className="cardLinks">
                 <a href={anime.url}>More info..</a>
+                <a href="#">+ Fav</a>
               </p>
             </div>
-            <div className="card-reveal">
+            <div className="card-reveal teal">
               <span className="card-title grey-text text-darken-4">
                 {anime.title}
                 <i className="material-icons right">close</i>

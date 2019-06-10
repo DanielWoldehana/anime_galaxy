@@ -29,7 +29,6 @@ class FavAnime extends Component {
     });
     return (
       <div>
-        <h4>Fav Anime List</h4>
         <div className="animeGalaxy favAnime">{favAnime}</div>
       </div>
     );

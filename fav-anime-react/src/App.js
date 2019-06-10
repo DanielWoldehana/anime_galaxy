@@ -1,9 +1,14 @@
 import React, { Component } from "react";
 import { Route, Link, Switch } from "react-router-dom";
 import { Redirect } from "react-router";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
 import Home from "./components/HomePage";
 import AnimeDetail from "./components/AnimeDetail";
 import FavAnime from "./components/FavAnime";
+import NavBar from "./components/NavBar";
+
 import "./App.css";
 
 const base_url = "https://api.jikan.moe/v3";
@@ -60,14 +65,19 @@ class App extends Component {
 
   render() {
     // console.log(this.state);
+
     return (
-      <div>
+      <div className="app">
         <nav>
-          <div className="nav-wrapper">
+          <NavBar />
+          {/* <div class="nav-wrapper">
             <Link to="/" className="brand-logo">
               Anime Galaxy
             </Link>
-            <ul id="nav-mobile" className="right hide-on-med-and-down">
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+              <i class="material-icons">menu</i>
+            </a>
+            <ul class="right hide-on-med-and-down">
               <li>
                 <Link to="/">Home</Link>
               </li>
@@ -80,8 +90,23 @@ class App extends Component {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
         </nav>
+
+        <ul class="sidenav" id="mobile-demo">
+          <li>
+            <a href="sass.html">Sass</a>
+          </li>
+          <li>
+            <a href="badges.html">Components</a>
+          </li>
+          <li>
+            <a href="collapsible.html">Javascript</a>
+          </li>
+          <li>
+            <a href="mobile.html">Mobile</a>
+          </li>
+        </ul>
 
         <Switch>
           <Route
@@ -95,13 +120,13 @@ class App extends Component {
               />
             )}
           />
+          s
           <Route
             path="/animeDetail"
             render={props => (
               <AnimeDetail
                 allAnime={this.state.allAnime}
                 allFavAnime={this.state.favAnime}
-                // handleAnimeDetail={this.handleAnimeDetail}
                 animeId={this.state.animeId}
               />
             )}
