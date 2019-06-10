@@ -33,7 +33,7 @@ body {
 
 .kemicofa-row .card > .card-content {
   flex-grow: 1;
-  flex-basis: 23rem;
+  flex-basis: -2rem;
 }
 
 .kemicofa-row .card > .card-image {
@@ -41,4 +41,8 @@ body {
   flex-shrink: 20;
   overflow-y: hidden;
   background-color: rgba(194, 189, 189, 0.644);
+}
+
+.icon {
+  height: 15px;
 }
