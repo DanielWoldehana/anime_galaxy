@@ -1,18 +1,20 @@
 import React, { Component } from "react";
 import { Route, Link, Switch } from "react-router-dom";
-import { Redirect } from "react-router";
-import AnimeDetail from "./AnimeDetail";
-import icon from "../images/menu.png";
+// import { Redirect } from "react-router";
+// import AnimeDetail from "./AnimeDetail";
+
 class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      allAnime: []
+      allAnime: [],
+      clickedAnime: []
     };
   }
 
   render() {
     let showAnime = this.props.allAnime.map((anime, index) => {
+      console.log(anime.image_url.width);
       return (
         <div key={anime.mal_id}>
           <div className="card">
@@ -25,7 +27,13 @@ class Home extends Component {
             </div>
             <div className="card-content">
               <span className="card-title activator grey-text text-darken-4">
-                <Link to="/animeDetail">{anime.title}</Link>
+                <Link
+                  to="/animeDetail"
+                  onClick={() => this.props.clickedAnime(anime.mal_id)}
+                  className="animeTitle"
+                >
+                  {anime.title}
+                </Link>
                 <i className="material-icons right">more_vert</i>
               </span>
               <p>
@@ -43,10 +51,10 @@ class Home extends Component {
         </div>
       );
     });
+
     return (
       <div>
-        <h2>This is the Home Page</h2>
-        <div className="kemicofa-row">{showAnime}</div>
+        <div className="animeGalaxy">{showAnime}</div>
       </div>
     );
   }

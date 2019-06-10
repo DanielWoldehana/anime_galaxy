@@ -7,7 +7,7 @@ body {
   overflow-x: hidden;
 }
 
-.kemicofa-row {
+.animeGalaxy {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -15,32 +15,37 @@ body {
   justify-content: stretch;
 }
 
-.kemicofa-row .car-title {
+.animeGalaxy .car-title {
   color: red;
   font-weight: 700;
 }
 
-.kemicofa-row > * {
+.animeGalaxy > * {
   flex-basis: 20rem;
   flex-shrink: 0;
 }
 
-.kemicofa-row .card {
+.animeGalaxy .card {
   display: flex;
   flex-direction: column;
   width: 300px;
 }
 
-.kemicofa-row .card > .card-content {
+.animeGalaxy .card > .card-content {
   flex-grow: 1;
-  flex-basis: -2rem;
+  flex-basis: 12rem;
+  overflow: scroll;
 }
 
-.kemicofa-row .card > .card-image {
+.animeGalaxy .card > .card-image {
   flex-basis: 25rem;
-  flex-shrink: 20;
+  flex-shrink: 2;
   overflow-y: hidden;
   background-color: rgba(194, 189, 189, 0.644);
+}
+
+.animeGalaxy .card > .card-image {
+  flex-basis: 15rem;
 }
 
 .icon {

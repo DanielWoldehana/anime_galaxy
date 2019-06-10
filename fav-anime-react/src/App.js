@@ -33,42 +33,40 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch(`${base_url}/search/anime?q=${randomTitle[random]}&page=1`)
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          allAnime: data.results
-        });
-      })
-      // .then(updateDom)
-      .catch(err => console.warn(err.message));
+    Promise.all([
+      fetch(`${base_url}/search/anime?q=${randomTitle[random]}&page=1`),
+      fetch(favAnimeUrl)
+    ])
 
-    fetch(favAnimeUrl)
-      .then(res => res.json())
-      .then(data => {
+      .then(([res1, res2]) => {
+        return Promise.all([res1.json(), res2.json()]);
+      })
+      .then(([res1, res2]) => {
+        // set state in here
         this.setState({
-          favAnime: data
+          allAnime: res1.results
         });
-      })
-      .catch(err => console.warn(err.message));
+        this.setState({
+          favAnime: res2
+        });
+      });
   }
-  handleAnimeDetail = id => {
-    fetch(`${base_url}/anime/${id}`)
-      .then(res => res.json())
-      .then(data => {
-        console.log(data);
-      })
-      // .then(updateDom)
-      .catch(err => console.warn(err.message));
+
+  handleClicked = id => {
+    this.setState({ animeId: id });
+    // console.log(id);
+    // console.log(this.state.animeId);
   };
 
   render() {
-    console.log(this.state.allAnime);
+    // console.log(this.state);
     return (
       <div>
         <nav>
           <div className="nav-wrapper">
-            <Link className="brand-logo">Anime Galaxy</Link>
+            <Link to="/" className="brand-logo">
+              Anime Galaxy
+            </Link>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
               <li>
                 <Link to="/">Home</Link>
@@ -93,6 +91,7 @@ class App extends Component {
               <Home
                 allAnime={this.state.allAnime}
                 allFavAnime={this.state.favAnime}
+                clickedAnime={this.handleClicked}
               />
             )}
           />
@@ -102,7 +101,8 @@ class App extends Component {
               <AnimeDetail
                 allAnime={this.state.allAnime}
                 allFavAnime={this.state.favAnime}
-                handleAnimeDetail={this.handleAnimeDetail}
+                // handleAnimeDetail={this.handleAnimeDetail}
+                animeId={this.state.animeId}
               />
             )}
           />

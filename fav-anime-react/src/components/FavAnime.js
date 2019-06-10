@@ -5,32 +5,32 @@ class FavAnime extends Component {
     let favAnime = this.props.allFavAnime.map(fav => {
       console.log(fav);
       return (
-        <div className="row">
-          <div className="col s12 m6">
-            <div className="card">
-              <div className="card-image">
-                <img src={fav.image_url} alt={fav.title} />
-              </div>
-              <div className="card-content">
-                <span className="card-title">{fav.title}</span>
-
-                <p>{fav.synopsis}</p>
-                <a
-                  to="favAnime"
-                  className="btn-floating halfway-fab waves-effect waves-light red"
-                >
-                  <i className="material-icons">+</i>
-                </a>
-              </div>
-            </div>
+        <div className="card">
+          <div className="card-image waves-effect waves-block waves-light">
+            <img className="activator" src={fav.image_url} alt={fav.title} />
+          </div>
+          <div className="card-content">
+            <span className="card-title activator grey-text text-darken-4">
+              {fav.title}
+              <i className="material-icons right">more_vert</i>
+            </span>
+            <p>
+              <a href="#">This is a link</a>
+            </p>
+          </div>
+          <div className="card-reveal">
+            <span className="card-title grey-text text-darken-4">
+              Card Title<i className="material-icons right">close</i>
+            </span>
+            <p>{fav.synopsis}</p>
           </div>
         </div>
       );
     });
     return (
       <div>
-        <h1>Fav Anime List</h1>
-        {favAnime}
+        <h4>Fav Anime List</h4>
+        <div className="animeGalaxy favAnime">{favAnime}</div>
       </div>
     );
   }
