@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import CreateFav from "./CreateFav";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
@@ -86,7 +87,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function MiniDrawer() {
+export default function MiniDrawer({ onAnimeCreate }) {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -98,15 +99,7 @@ export default function MiniDrawer() {
   function handleDrawerClose() {
     setOpen(false);
   }
-
-  function HomeIcon(props) {
-    return (
-      <SvgIcon {...props}>
-        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
-      </SvgIcon>
-    );
-  }
-
+  console.log(onAnimeCreate);
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -128,9 +121,10 @@ export default function MiniDrawer() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap>
+          <Typography variant="h6" noWrap style={{ flex: 1 }}>
             <Link to="/">Anime Galaxy</Link>
           </Typography>
+          <CreateFav onCreate={onAnimeCreate} />
         </Toolbar>
       </AppBar>
       <Drawer

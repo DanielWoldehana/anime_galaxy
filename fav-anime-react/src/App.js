@@ -8,6 +8,7 @@ import Home from "./components/HomePage";
 import AnimeDetail from "./components/AnimeDetail";
 import FavAnime from "./components/FavAnime";
 import NavBar from "./components/NavBar";
+import Axios from "axios";
 
 import "./App.css";
 
@@ -33,7 +34,13 @@ class App extends Component {
     this.state = {
       allAnime: [],
       favAnime: [],
-      animeId: null
+      animeId: null,
+      newFavAnime: {
+        title: "",
+        image_url: "",
+        synopsis: "",
+        score: ""
+      }
     };
   }
 
@@ -63,34 +70,26 @@ class App extends Component {
     // console.log(this.state.animeId);
   };
 
+  handleAnimeCreate = anime => {
+    this.setState({
+      newFavAnime: anime
+    });
+    Axios.post(`${favAnimeUrl}/newFavAnime`, this.state.newFavAnime)
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  };
+
   render() {
     // console.log(this.state);
 
     return (
       <div className="app">
         <nav>
-          <NavBar />
-          {/* <div class="nav-wrapper">
-            <Link to="/" className="brand-logo">
-              Anime Galaxy
-            </Link>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger">
-              <i class="material-icons">menu</i>
-            </a>
-            <ul class="right hide-on-med-and-down">
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/favAnime">FavAnime</Link>
-              </li>
-              <li>
-                <Link to="/unknown" href="collapsible.html">
-                  Others
-                </Link>
-              </li>
-            </ul>
-          </div> */}
+          <NavBar onAnimeCreate={this.handleAnimeCreate} />
         </nav>
 
         <ul class="sidenav" id="mobile-demo">

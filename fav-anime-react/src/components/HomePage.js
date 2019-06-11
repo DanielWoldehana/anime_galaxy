@@ -13,7 +13,6 @@ class Home extends Component {
 
   render() {
     let showAnime = this.props.allAnime.map((anime, index) => {
-      console.log(anime.image_url.width);
       return (
         <div key={anime.mal_id}>
           <div className="card">
