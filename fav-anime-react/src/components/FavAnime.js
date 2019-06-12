@@ -14,6 +14,7 @@ class FavAnime extends Component {
     Axios.delete(`${favAnimeUrl}/delete/${anime}`)
       .then(res => {
         console.log(res);
+        window.location.reload();
       })
       .catch(err => {
         console.error(err);
@@ -41,7 +42,7 @@ class FavAnime extends Component {
                 variant="contained"
                 color="secondary"
                 className="deleteButton"
-                onClick={this.handleAnimeDelete(fav.title)}
+                onClick={() => this.handleAnimeDelete(fav.title)}
               >
                 Delete
               </Button>

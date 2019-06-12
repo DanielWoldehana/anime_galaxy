@@ -48,7 +48,6 @@ export default withStyles(styles)(
     handleSubmit = () => {
       const { newFavAnime } = this.state;
       this.props.onCreate(newFavAnime);
-      window.location.reload();
       console.log(this.props);
     };
     render() {

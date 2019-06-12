@@ -82,6 +82,7 @@ class App extends Component {
     Axios.post(`${favAnimeUrl}/newFavAnime`, anime)
       .then(res => {
         console.log(res);
+        window.location.reload();
       })
       .catch(err => {
         console.error(err);
@@ -89,8 +90,6 @@ class App extends Component {
   };
 
   render() {
-    // console.log(this.state);
-
     return (
       <div className="app">
         <nav>
