@@ -40,7 +40,6 @@ export default withStyles(styles)(
           [title]: value
         }
       });
-      console.log(this.state.newFavAnime);
     };
 
     handleSubmit = () => {
@@ -49,7 +48,6 @@ export default withStyles(styles)(
       console.log("attempting to create function");
     };
     render() {
-      console.log(this.props);
       const {
           open,
           newFavAnime: { title, image_url, synopsis, score }

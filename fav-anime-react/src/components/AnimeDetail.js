@@ -59,8 +59,8 @@ class AnimeDetail extends Component {
     }
     console.log(window.innerWidth);
     return (
-      <div>
-        <div>
+      <div className="mainDetail-container">
+        <div className="animeDetail-container">
           detail Page
           <h1>{anime.title}</h1>
           <h1>{this.state.noVideo}</h1>

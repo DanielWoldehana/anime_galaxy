@@ -64,6 +64,16 @@ class App extends Component {
       });
   }
 
+  handleFavAnimeFetch = () => {
+    Axios.get(favAnimeUrl)
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  };
+
   handleClicked = id => {
     this.setState({ animeId: id });
     // console.log(id);
@@ -71,12 +81,10 @@ class App extends Component {
   };
 
   handleAnimeCreate = anime => {
-    this.setState({
-      newFavAnime: anime
-    });
-    Axios.post(`${favAnimeUrl}/newFavAnime`, this.state.newFavAnime)
+    Axios.post(`${favAnimeUrl}/newFavAnime`, anime)
       .then(res => {
         console.log(res);
+        this.handleFavAnimeFetch();
       })
       .catch(err => {
         console.error(err);
