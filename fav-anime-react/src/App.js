@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Route, Link, Switch } from "react-router-dom";
-import { Redirect } from "react-router";
+import { Route, Link, Switch, Redirect } from "react-router-dom";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
@@ -40,7 +39,8 @@ class App extends Component {
         image_url: "",
         synopsis: "",
         score: ""
-      }
+      },
+      redirect: false
     };
   }
 
@@ -67,7 +67,11 @@ class App extends Component {
   handleFavAnimeFetch = () => {
     Axios.get(favAnimeUrl)
       .then(res => {
+        this.setState({ redirect: !this.state.redirect });
         console.log(res);
+        if (this.state.redirect) {
+          return <Redirect to="/favAnime" />;
+        }
       })
       .catch(err => {
         console.error(err);

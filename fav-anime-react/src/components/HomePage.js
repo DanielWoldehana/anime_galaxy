@@ -93,6 +93,7 @@ class Home extends Component {
           volume="0.1"
           muted={this.state.mute}
           onPause
+          loop
         />
 
         <div className="animeGalaxy">{showAnime}</div>
