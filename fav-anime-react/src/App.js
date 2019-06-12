@@ -100,7 +100,7 @@ class App extends Component {
           <NavBar onAnimeCreate={this.handleAnimeCreate} />
         </nav>
 
-        <ul class="sidenav" id="mobile-demo">
+        <ul className="sidenav" id="mobile-demo">
           <li>
             <a href="sass.html">Sass</a>
           </li>

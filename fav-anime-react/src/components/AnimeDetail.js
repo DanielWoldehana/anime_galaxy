@@ -62,7 +62,7 @@ class AnimeDetail extends Component {
       <div className="mainDetail-container">
         <div className="animeDetail-container">
           detail Page
-          <h1>{anime.title}</h1>
+          <h3>{anime.title}</h3>
           <h1>{this.state.noVideo}</h1>
           <ReactPlayer
             url={anime.trailer_url}

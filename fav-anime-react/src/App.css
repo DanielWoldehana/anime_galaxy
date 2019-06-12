@@ -1,5 +1,21 @@
 .app {
   margin: 0;
+  background: linear-gradient(325deg, #39caa5, #df8755, #4f4f5a, #f1cccc);
+  background-size: 800% 800%;
+  animation: AnimationName 5s ease infinite;
+  /* background-color: rgba(46, 40, 40, 0.712); */
+}
+
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 5%;
+  }
+  50% {
+    background-position: 100% 96%;
+  }
+  100% {
+    background-position: 0% 5%;
+  }
 }
 
 body {
@@ -89,9 +105,18 @@ body {
 }
 .mainDetail-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .animeDetail-container {
   border: 4px solid black;
+}
+
+.wallpaper {
+  width: 100%;
+  height: 300px;
+  /* border: 2px solid black;
+  background: url("https://i.pinimg.com/originals/19/de/7d/19de7dadebc065f4534b7cd3921680d2.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 300px; */
 }
