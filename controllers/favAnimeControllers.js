@@ -39,7 +39,7 @@ router.put("/update/:title", (req, res) => {
 
 router.delete("/delete/:title", (req, res) => {
   favAnimeModel
-    .deleteMany({ title: req.params.title })
+    .deleteOne({ title: req.params.title })
     .then(ph => {
       res.json(ph);
     })

@@ -67,11 +67,7 @@ class App extends Component {
   handleFavAnimeFetch = () => {
     Axios.get(favAnimeUrl)
       .then(res => {
-        this.setState({ redirect: !this.state.redirect });
         console.log(res);
-        if (this.state.redirect) {
-          return <Redirect to="/favAnime" />;
-        }
       })
       .catch(err => {
         console.error(err);
@@ -80,15 +76,12 @@ class App extends Component {
 
   handleClicked = id => {
     this.setState({ animeId: id });
-    // console.log(id);
-    // console.log(this.state.animeId);
   };
 
   handleAnimeCreate = anime => {
     Axios.post(`${favAnimeUrl}/newFavAnime`, anime)
       .then(res => {
         console.log(res);
-        this.handleFavAnimeFetch();
       })
       .catch(err => {
         console.error(err);

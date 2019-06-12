@@ -17,15 +17,18 @@ const styles = theme => ({
 });
 export default withStyles(styles)(
   class CreateFav extends Component {
-    state = {
-      open: false,
-      newFavAnime: {
-        title: "",
-        image_url: "",
-        synopsis: "",
-        score: ""
-      }
-    };
+    constructor(props) {
+      super(props);
+      this.state = {
+        open: false,
+        newFavAnime: {
+          title: "",
+          image_url: "",
+          synopsis: "",
+          score: ""
+        }
+      };
+    }
 
     handleToggle = () => {
       this.setState({
@@ -45,7 +48,8 @@ export default withStyles(styles)(
     handleSubmit = () => {
       const { newFavAnime } = this.state;
       this.props.onCreate(newFavAnime);
-      console.log("attempting to create function");
+      window.location.reload();
+      console.log(this.props);
     };
     render() {
       const {

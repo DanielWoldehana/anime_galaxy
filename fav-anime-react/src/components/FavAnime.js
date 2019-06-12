@@ -1,6 +1,25 @@
 import React, { Component } from "react";
+import Button from "@material-ui/core/Button";
+import Axios from "axios";
+const favAnimeUrl = "https://fav-anime-db.herokuapp.com/api/favAnime";
 
 class FavAnime extends Component {
+  constructor() {
+    super();
+    this.state = {
+      deleteTitle: ""
+    };
+  }
+  handleAnimeDelete = anime => {
+    Axios.delete(`${favAnimeUrl}/delete/${anime}`)
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  };
+
   render() {
     let favAnime = this.props.allFavAnime.map(fav => {
       console.log(fav);
@@ -17,6 +36,16 @@ class FavAnime extends Component {
             <p>
               <a href="#">This is a link</a>
             </p>
+            <div className="buttonContainer">
+              <Button
+                variant="contained"
+                color="secondary"
+                className="deleteButton"
+                onClick={this.handleAnimeDelete(fav.title)}
+              >
+                Delete
+              </Button>
+            </div>
           </div>
           <div className="card-reveal">
             <span className="card-title grey-text text-darken-4">
