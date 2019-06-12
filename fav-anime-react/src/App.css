@@ -2,21 +2,6 @@
   margin: 0;
   min-height: 100vh;
   background-color: black;
-  /* background: linear-gradient(325deg, #39caa5, #df8755, #4f4f5a, #f1cccc);
-  background-size: 800% 800%;
-  animation: AnimationName 5s ease infinite; */
-}
-
-@keyframes AnimationName {
-  0% {
-    background-position: 0% 5%;
-  }
-  50% {
-    background-position: 100% 96%;
-  }
-  100% {
-    background-position: 0% 5%;
-  }
 }
 
 body {

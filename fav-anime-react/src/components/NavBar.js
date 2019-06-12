@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import CreateFav from "./CreateFav";
+import UpdateFav from "./UpdateFav";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
@@ -129,6 +130,7 @@ export default function MiniDrawer({ onAnimeCreate }) {
           <Typography variant="h6" noWrap style={{ flex: 1 }}>
             <Link to="/">Anime Galaxy</Link>
           </Typography>
+          <UpdateFav />
           <CreateFav onCreate={onAnimeCreate} />
         </Toolbar>
       </AppBar>

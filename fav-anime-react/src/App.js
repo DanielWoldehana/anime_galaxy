@@ -40,7 +40,8 @@ class App extends Component {
         synopsis: "",
         score: ""
       },
-      redirect: false
+      redirect: false,
+      favAnimeList: []
     };
   }
 
@@ -88,6 +89,11 @@ class App extends Component {
         console.error(err);
       });
   };
+
+  // handleFavAnimeList = array => {
+  //   this.setState({ favAnimeList: array });
+  //   console.log(this.state.favAnimeList);
+  // };
 
   render() {
     return (
@@ -140,6 +146,7 @@ class App extends Component {
               <FavAnime
                 allAnime={this.state.allAnime}
                 allFavAnime={this.state.favAnime}
+                favAnimeList={this.handleFavAnimeList}
               />
             )}
           />

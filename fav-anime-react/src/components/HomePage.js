@@ -71,7 +71,7 @@ class Home extends Component {
       "https://youtu.be/6ajTMeOORjM"
     ];
     let randomV = Math.floor(Math.random() * Vurl.length);
-    console.log(randomV);
+    console.log(`${randomV}randomV`);
     return (
       <div>
         <ReactPlayer

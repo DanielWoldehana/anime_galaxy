@@ -7,7 +7,8 @@ class FavAnime extends Component {
   constructor() {
     super();
     this.state = {
-      deleteTitle: ""
+      deleteTitle: "",
+      favAnime: []
     };
   }
   handleAnimeDelete = anime => {
@@ -23,6 +24,8 @@ class FavAnime extends Component {
 
   render() {
     let favAnime = this.props.allFavAnime.map(fav => {
+      this.state.favAnime.push(fav.title);
+      // this.props.favAnimeList(this.state.favAnime);
       console.log(fav);
       return (
         <div className="card">

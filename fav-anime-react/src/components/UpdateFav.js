@@ -16,7 +16,7 @@ const styles = theme => ({
   }
 });
 export default withStyles(styles)(
-  class CreateFav extends Component {
+  class UpdateFav extends Component {
     constructor(props) {
       super(props);
       this.state = {
