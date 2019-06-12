@@ -48,7 +48,7 @@ class Home extends Component {
                 <a href="#">+ Fav</a>
               </p>
             </div>
-            <div className="card-reveal teal">
+            <div className="card-reveal">
               <span className="card-title grey-text text-darken-4">
                 {anime.title}
                 <i className="material-icons right">close</i>
@@ -59,17 +59,6 @@ class Home extends Component {
         </div>
       );
     });
-
-    const styles = {
-      container: {
-        width: "100%",
-        height: 300,
-        border: "2px solid black",
-        background:
-          "url('https://cdn.guidingtech.com/imager/media/assets/215513/Best-Anime-Wallpapers-in-HD-and-4K-That-You-Must-Get-Now_4d470f76dc99e18ad75087b1b8410ea9.jpg?1549108742')",
-        backgroundSize: "cover"
-      }
-    };
 
     const Vurl = [
       "https://www.youtube.com/embed/otxA7fpPMPc",
@@ -82,7 +71,7 @@ class Home extends Component {
       "https://youtu.be/6ajTMeOORjM"
     ];
     let randomV = Math.floor(Math.random() * Vurl.length);
-
+    console.log(randomV);
     return (
       <div>
         <ReactPlayer

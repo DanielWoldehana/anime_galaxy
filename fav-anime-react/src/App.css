@@ -1,9 +1,10 @@
 .app {
   margin: 0;
-  background: linear-gradient(325deg, #39caa5, #df8755, #4f4f5a, #f1cccc);
+  min-height: 100vh;
+  background-color: black;
+  /* background: linear-gradient(325deg, #39caa5, #df8755, #4f4f5a, #f1cccc);
   background-size: 800% 800%;
-  animation: AnimationName 5s ease infinite;
-  /* background-color: rgba(46, 40, 40, 0.712); */
+  animation: AnimationName 5s ease infinite; */
 }
 
 @keyframes AnimationName {
@@ -47,6 +48,8 @@ body {
   flex-direction: column;
   width: 300px;
   background-color: rgb(250, 249, 249);
+  box-shadow: inset 0 0 30px #000000;
+  margin: 10px 10px;
 }
 
 .animeGalaxy .card > .card-content {
@@ -66,7 +69,7 @@ body {
 }
 
 .animeGalaxy .card > .card-image {
-  flex-basis: 15rem;
+  flex-basis: 13rem;
 }
 
 .card-reveal {

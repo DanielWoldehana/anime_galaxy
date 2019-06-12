@@ -28,14 +28,19 @@ const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({
   root: {
-    display: "flex"
+    display: "flex",
+    fontSize: "50px"
   },
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
     transition: theme.transitions.create(["width", "margin"], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen
-    })
+    }),
+    backgroundColor: "#FEE140",
+    background:
+      "radial-gradient(circle, rgba(229,242,75,1) 0%, rgba(0,0,0,1) 85%)",
+    boxShadow: "inset 0 0 50px #000000"
   },
   appBarShift: {
     marginLeft: drawerWidth,
