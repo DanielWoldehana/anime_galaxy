@@ -49,3 +49,5 @@ here is a sample code to pull data for an anime from the API
 ```javascript
 fetch(`https://api.jikan.moe/v3/search/anime?q=naruto&page=1`);
 ```
+
+To search for different animes put the name of the anime after the q= but before the &page=1 in the API route.
