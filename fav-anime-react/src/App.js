@@ -7,6 +7,8 @@ import Home from "./components/HomePage";
 import AnimeDetail from "./components/AnimeDetail";
 import FavAnime from "./components/FavAnime";
 import NavBar from "./components/NavBar";
+import AnimeShop from "./components/animeShop";
+import AnimeGames from "./components/animeGames";
 import Axios from "axios";
 
 import "./App.css";
@@ -150,6 +152,8 @@ class App extends Component {
               />
             )}
           />
+          <Route path="/animeShop" render={props => <AnimeShop />} />
+          <Route path="/animeGames" render={props => <AnimeGames />} />
         </Switch>
       </div>
     );
