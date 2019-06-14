@@ -11,7 +11,7 @@ Anime Galaxy is a MERN (MongoDB, Express, React, Node.js) stack web application 
 npm start === node index.js
 npm run seed === heroku run node db/seed.js
 
-### Used Languages MongoDB/Express/Node.js
+### Used Libraries/Frameworks MongoDB/Express/Node.js
 
 The url for the FavAnime page is https://fav-anime-db.herokuapp.com/api/favAnime.
 I have built full CRUD fuctionality for the favorite anime Database the Routs are as follows:
@@ -36,7 +36,16 @@ To delete an Exisiting FavAnime use this Route "/delete/:title" the :title again
 
 ## SCRIPS
 
-npm start === react-scripts start
-npm build === react-scripts build
-npm test === react-scripts test
-npm eject === react-scripts eject
+- npm start === react-scripts start
+- npm build === react-scripts build
+- npm test === react-scripts test
+- npm eject === react-scripts eject
+
+### Used Libraries/Frameworks React/React-Player/Material-ui/Axios
+
+For the front Part that is pulling from the Jikan API you would need to use this route https://api.jikan.moe/v3 for the URL in your HTTP request.
+here is a sample code to pull data for an anime from the API
+
+```javascript
+fetch(`https://api.jikan.moe/v3/search/anime?q=naruto&page=1`);
+```
