@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 import { Route, Link, Switch } from "react-router-dom";
 import ReactPlayer from "react-player";
-// import { Redirect } from "react-router";
-// import AnimeDetail from "./AnimeDetail";
-
-const randomAnimeWallpapers = require("random-anime-wallpapers");
 
 class Home extends Component {
   constructor(props) {
@@ -14,12 +10,7 @@ class Home extends Component {
       mute: ""
     };
   }
-  componentDidMount() {
-    randomAnimeWallpapers().then(images => {
-      console.log("images");
-      console.log(images);
-    });
-  }
+
   render() {
     let showAnime = this.props.allAnime.map((anime, index) => {
       return (
