@@ -6,6 +6,11 @@ Anime Galaxy is a MERN (MongoDB, Express, React, Node.js) stack web application 
 
 ## BackEnd
 
+## SCRIPTS
+
+npm start === node index.js
+npm run seed === heroku run node db/seed.js
+
 ### Used Languages MongoDB/Express/Node.js
 
 The url for the FavAnime page is https://fav-anime-db.herokuapp.com/api/favAnime.
@@ -26,3 +31,12 @@ To Update a an existing FavAnime use this route "/update/:title" the :title in t
 ### DELETE REQUEST
 
 To delete an Exisiting FavAnime use this Route "/delete/:title" the :title again is refering to the parameters you want to search by, look back at the PUT REQUEST for more info on Parameters with React-router.
+
+# FRONT END
+
+## SCRIPS
+
+npm start === react-scripts start
+npm build === react-scripts build
+npm test === react-scripts test
+npm eject === react-scripts eject
