@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CreateFav from "./CreateFav";
 import UpdateFav from "./UpdateFav";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import clsx from "clsx";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
@@ -24,6 +24,8 @@ import { blue, red } from "@material-ui/core/colors";
 import SvgIcon from "@material-ui/core/SvgIcon";
 import home from "../images/house.png";
 import star from "../images/star2.png";
+import bag from "../images/shopping-bag.png";
+import gameIcon from "../images/joystick.png";
 
 const drawerWidth = 240;
 
@@ -105,6 +107,8 @@ export default function MiniDrawer({ onAnimeCreate }) {
   function handleDrawerClose() {
     setOpen(false);
   }
+
+  function handleRedirect() {}
   console.log(onAnimeCreate);
   return (
     <div className={classes.root}>
@@ -130,7 +134,7 @@ export default function MiniDrawer({ onAnimeCreate }) {
           <Typography variant="h6" noWrap style={{ flex: 1 }}>
             <Link to="/">Anime Galaxy</Link>
           </Typography>
-          <UpdateFav />
+          {/* <UpdateFav /> */}
           <CreateFav onCreate={onAnimeCreate} />
         </Toolbar>
       </AppBar>
@@ -159,10 +163,10 @@ export default function MiniDrawer({ onAnimeCreate }) {
         </div>
         <Divider />
         <List>
-          <ListItem button key="Home">
-            <ListItemIcon>
+          <ListItem button onClick={handleRedirect} key="Home">
+            <ListItemIcon className="iconContainer">
               <Link to="/">
-                <img src={home} alt="icon" className="homeIcon" />
+                <img src={home} alt="icon" className="icon homeIcon" />
               </Link>
             </ListItemIcon>
             <ListItemText button>
@@ -175,7 +179,7 @@ export default function MiniDrawer({ onAnimeCreate }) {
           <ListItem button key="Fav">
             <ListItemIcon>
               <Link to="/favAnime">
-                <img src={star} alt="icon" />
+                <img src={star} alt="icon" className="icon favIcon" />
               </Link>
             </ListItemIcon>
 
@@ -183,6 +187,32 @@ export default function MiniDrawer({ onAnimeCreate }) {
               <Link to="/favAnime" className="iconLink">
                 Favorites
               </Link>
+            </ListItemText>
+          </ListItem>
+          <ListItem button key="Home">
+            <ListItemIcon>
+              <Link to="/animeShop">
+                <img src={bag} alt="icon" className="icon shopIcon" />
+              </Link>
+            </ListItemIcon>
+            <ListItemText button>
+              {" "}
+              <Link to="/animeShop" className="iconLink">
+                Shop
+              </Link>{" "}
+            </ListItemText>
+          </ListItem>
+          <ListItem button key="Home">
+            <ListItemIcon>
+              <Link to="/animeGames">
+                <img src={gameIcon} alt="icon" className="icon gameIcon" />
+              </Link>
+            </ListItemIcon>
+            <ListItemText button>
+              {" "}
+              <Link to="/animeGames" className="iconLink">
+                Games
+              </Link>{" "}
             </ListItemText>
           </ListItem>
         </List>

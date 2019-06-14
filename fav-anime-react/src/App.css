@@ -43,8 +43,21 @@ body {
   overflow: scroll;
 }
 
-.animeGalaxy .card-content {
-  /* position: absolute; */
+.favTitle {
+  font-family: "Fredericka the Great", cursive;
+}
+
+.favTitle:hover {
+  color: rgb(6, 113, 138);
+}
+
+.animeTitle {
+  font-family: "Fredericka the Great", cursive;
+  color: black;
+}
+
+.animeTitle:hover {
+  color: rgb(6, 113, 138);
 }
 
 .animeGalaxy .card > .card-image {
@@ -91,13 +104,45 @@ body {
 
 .homeIcon {
 }
+
+.animeDetailTitle {
+  margin-top: 0;
+  font-family: "Bangers", cursive;
+}
 .mainDetail-container {
+  color: white;
+  width: 85%;
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .animeDetail-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   border: 4px solid black;
+  justify-content: space-between;
+}
+.sideContent {
+  margin-right: 10px;
+  word-wrap: break-word;
+  width: 240px;
+}
+
+.sideContent h5 {
+  color: rgba(224, 224, 37, 0.788);
+  font-family: "Permanent Marker", cursive;
+}
+
+.videoContainer {
+  width: 640px;
+}
+
+.videoContainer h4 {
+  color: rgba(243, 245, 243, 0.678);
+  font-family: "Righteous", cursive;
 }
 
 .wallpaper {
@@ -113,4 +158,32 @@ body {
   display: flex;
   justify-content: center;
   margin-top: 30px;
+}
+.animeDetailTitle {
+  color: white;
+  font-size: 3vw;
+}
+
+/* .videoContainer p {
+  width: 640%;
+} */
+
+.icon {
+  position: relative;
+  right: 10px;
+}
+
+.iconContainer:hover {
+}
+
+.icon:hover {
+}
+@media only screen and (max-width: 650px) {
+  .icon {
+    height: 25px;
+    position: relative;
+    right: 20px;
+  }
+  .iconContainer {
+  }
 }
