@@ -132,7 +132,9 @@ export default function MiniDrawer({ onAnimeCreate }) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap style={{ flex: 1 }}>
-            <Link to="/">Anime Galaxy</Link>
+            <Link to="/" className="navTitle">
+              Anime Galaxy
+            </Link>
           </Typography>
           {/* <UpdateFav /> */}
           <CreateFav onCreate={onAnimeCreate} />

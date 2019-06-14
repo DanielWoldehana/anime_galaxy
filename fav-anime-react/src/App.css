@@ -24,6 +24,12 @@ body {
   font-weight: 700;
 }
 
+.navTitle {
+  font-family: "Fredericka the Great", cursive;
+  font-size: 50px;
+  color: black;
+}
+
 .animeGalaxy > * {
   flex-basis: 20rem;
   flex-shrink: 0;
@@ -163,10 +169,6 @@ body {
   color: white;
   font-size: 3vw;
 }
-
-/* .videoContainer p {
-  width: 640%;
-} */
 
 .icon {
   position: relative;
